@@ -21,6 +21,7 @@
 								<th scope="col">Expense Name</th>
 								<th scope="col">Vendor</th>
 								<th scope="col">Amount</th>
+								<th scope="col">Actions</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -29,6 +30,7 @@
 									<td><c:out value="${expense.name}"></c:out></td>
 									<td><c:out value="${expense.vendor}"></c:out></td>
 									<td><c:out value="${expense.amount}"></c:out></td>
+									<td><a href="/expenses/edit/${expense.getId()}" class="btn btn-link">Editar</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
