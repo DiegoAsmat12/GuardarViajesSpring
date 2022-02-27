@@ -27,10 +27,17 @@
 						<tbody>
 							<c:forEach var="expense" items="${currentExpenses}">
 								<tr>
-									<td><c:out value="${expense.name}"></c:out></td>
+									<td><a href="/expenses/${expense.getId()}" class="btn btn-link"><c:out value="${expense.name}"></c:out></a></td>
 									<td><c:out value="${expense.vendor}"></c:out></td>
 									<td><c:out value="${expense.amount}"></c:out></td>
-									<td><a href="/expenses/edit/${expense.getId()}" class="btn btn-link">Editar</a></td>
+									<td class="d-flex">
+										<a href="/expenses/edit/${expense.getId()}" class="btn btn-link">Edit</a>
+										<form action="/expenses/${expense.getId()}" method="post">
+											<input type="hidden" name="_method" value="delete">
+											<button class="btn btn-danger" type="submit">Delete</button>
+										</form>
+										
+									</td>
 								</tr>
 							</c:forEach>
 						</tbody>

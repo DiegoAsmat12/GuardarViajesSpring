@@ -39,4 +39,8 @@ public class ServicioExpenses {
 		}
 		return null;
 	}
+	
+	public void deleteExpense(Long id) {
+		repositorioExpenses.deleteById(id);
+	}
 }
